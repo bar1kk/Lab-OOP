@@ -1,0 +1,6 @@
+﻿/Lab OOP.sln
+.idea
+*bin
+*obj
+*Properties
+*.csproj
