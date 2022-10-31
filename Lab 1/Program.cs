@@ -32,15 +32,6 @@ namespace OOP_Lab1
             Console.Write(secondPlayer.GetStats());
             Console.WriteLine();
             Console.Write(thirdPlayer.GetStats());
-            
         }
-        
-        
-        
-        
-        
-        
-        
-        
     }
 }

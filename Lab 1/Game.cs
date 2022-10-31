@@ -40,10 +40,9 @@ namespace OOP_Lab1
             {
                 game = new Game(secondPlayer, firstPlayer, ratingValue);
             }
-
             game.Winner.WinGame(game);
             game.Looser.LoseGame(game);
-
+            
             return game;
         }
     }

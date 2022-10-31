@@ -75,7 +75,6 @@ namespace OOP_Lab1
                         report.AppendLine($"{item.Index}\t{item.Looser.UserName}\t\tWin\t+{item.RatingValue}");
                     }
                 }
-
                 report.AppendLine($"Number of games: {GamesCount}\n{UserName}'s rating after gaming: {CurrentRating}");
                 return report.ToString();
         }
