@@ -8,7 +8,38 @@ namespace Lab_2.GameAccount
         {
             TypeOfGameAccount = "With additional points for winning streaks";
         }
-        private int _totalBonusPoints;
+
+        private int TotalBonusPoints
+        {
+            get
+            {
+                int bonusPoints = 10;
+                int totalBonusPoints = 0;
+                bool streak = false;
+                foreach (var item in AllGames)
+                {
+                    if (item is PracticeGame)
+                    {
+                        continue;
+                    }
+
+                    if (Equals(this, item.Loser))
+                    {
+                        streak = false;
+                    }
+                    else
+                    {
+                        if (streak)
+                        {
+                            totalBonusPoints += bonusPoints;
+                        }
+
+                        streak = true;
+                    }
+                }
+                return totalBonusPoints;
+            }
+        }
 
         public override int CurrentRating
         {
@@ -17,9 +48,14 @@ namespace Lab_2.GameAccount
                 int currentRating = InitialRating;
                 int bonusPoints = 10;
                 bool streak = false;
-                
+
                 foreach (var item in AllGames)
                 {
+                    if (item is PracticeGame)
+                    {
+                        continue;
+                    }
+
                     if (Equals(this, item.Loser))
                     {
                         if (currentRating - item.RatingValue < 1)
@@ -35,23 +71,16 @@ namespace Lab_2.GameAccount
                     }
                     else
                     {
-                        if (item.GetType() != typeof(PracticeGame))
+                        if (streak)
                         {
-                            if (streak)
-                            {
-                                currentRating += (item.RatingValue + bonusPoints);
-                                _totalBonusPoints += bonusPoints;
-                            }
-                            else
-                            {
-                                currentRating += item.RatingValue;
-                                streak = true;
-                            }
+                            currentRating += (item.RatingValue + bonusPoints);
                         }
                         else
                         {
                             currentRating += item.RatingValue;
                         }
+
+                        streak = true;
                     }
                 }
                 return currentRating;
@@ -69,7 +98,7 @@ namespace Lab_2.GameAccount
                 if (Equals(this, item.Loser))
                 {
                     report.Append($"{item.Index}\t{item.TypeOfGame}\t{item.Winner.UserName}\t\tLose\t");
-                    if (item.GetType() == typeof(PracticeGame))
+                    if (item is PracticeGame)
                     {
                         report.AppendLine($"{item.RatingValue}");
                     }
@@ -81,7 +110,7 @@ namespace Lab_2.GameAccount
                 else
                 {
                     report.Append($"{item.Index}\t{item.TypeOfGame}\t{item.Loser.UserName}\t\tWin\t");
-                    if (item.GetType() == typeof(PracticeGame))
+                    if (item is PracticeGame)
                     {
                         report.AppendLine($"{item.RatingValue}");
                     }
@@ -91,8 +120,10 @@ namespace Lab_2.GameAccount
                     }
                 }
             }
-            report.AppendLine($"Total bonus points: {_totalBonusPoints}\nNumber of games: {GamesCount}\n{UserName}'s rating after gaming: {CurrentRating}");
-            
+
+            report.AppendLine(
+                $"Total bonus points: {TotalBonusPoints}\nNumber of games: {GamesCount}\n{UserName}'s rating after gaming: {CurrentRating}");
+
             return report.ToString();
         }
     }

@@ -27,8 +27,7 @@ namespace Lab_2.GameAccount
         }
 
         protected int GamesCount => AllGames.Count;
-        protected readonly List<BaseGame> AllGames = new List<BaseGame>();
-
+        protected  readonly List<BaseGame> AllGames = new List<BaseGame>();
         public void WinGame(BaseGame game)
         {
             AllGames.Add(game);

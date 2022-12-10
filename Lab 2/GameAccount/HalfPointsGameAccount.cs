@@ -48,7 +48,7 @@ namespace Lab_2.GameAccount
                 if (Equals(this, item.Loser))
                 {
                     report.Append($"{item.Index}\t{item.TypeOfGame}\t{item.Winner.UserName}\t\tLose\t");
-                    if (item.GetType() == typeof(PracticeGame))
+                    if (item is PracticeGame)
                     {
                         report.AppendLine($"{item.RatingValue}");
                     }
@@ -60,7 +60,7 @@ namespace Lab_2.GameAccount
                 else
                 {
                     report.Append($"{item.Index}\t{item.TypeOfGame}\t{item.Loser.UserName}\t\tWin\t");
-                    if (item.GetType() == typeof(PracticeGame))
+                    if (item is PracticeGame)
                     {
                         report.AppendLine($"{item.RatingValue}");
                     }
