@@ -11,12 +11,12 @@ namespace Lab_2
         
         public BaseGameAccount GetAddPointsGameAccount(string userName, int initialRating)
         {
-            return new AddPointsGameAccount(userName, initialRating);
+            return new AddRatingGameAccount(userName, initialRating);
         }
 
-        public BaseGameAccount GetHalfPointsGameAccount(string userName, int initialRating)
+        public BaseGameAccount GetHalfRatingGameAccount(string userName, int initialRating)
         {
-            return new HalfPointsGameAccount(userName, initialRating);
+            return new HalfRatingGameAccount(userName, initialRating);
         }
     }
 }

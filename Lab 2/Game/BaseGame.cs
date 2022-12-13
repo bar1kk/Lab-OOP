@@ -6,9 +6,16 @@ namespace Lab_2.Game
     public abstract class BaseGame
     { 
         protected static readonly Random Rand = new Random();
+
+        public enum Type
+        {
+            NormalGame,
+            MoreChance, 
+            Practice
+        }
         private static int _id = 1000;
         public int Index { get; }
-        public String TypeOfGame{ get; protected set; }
+        public Type TypeOfGame{ get; protected set; }
         public int RatingValue { get; }
         public BaseGameAccount Winner;
         public BaseGameAccount Loser;

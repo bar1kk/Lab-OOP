@@ -8,7 +8,14 @@ namespace Lab_2.GameAccount
     {
         public string UserName { get; }
         protected readonly int InitialRating;
-        protected String TypeOfGameAccount{ get; set; }
+        protected Type TypeOfGameAccount{ get; set; }
+
+        protected enum Type
+        {
+            WithAdditionalRating,
+            OnlyHalfRatingIsDeducted,
+            Normal
+        }
         public abstract int CurrentRating { get; }
         protected BaseGameAccount(string userName, int initialRating)
         {

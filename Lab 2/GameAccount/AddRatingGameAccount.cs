@@ -2,11 +2,11 @@
 
 namespace Lab_2.GameAccount
 {
-    public class AddPointsGameAccount : BaseGameAccount
+    public class AddRatingGameAccount : BaseGameAccount
     {
-        public AddPointsGameAccount(string userName, int initialRating) : base(userName, initialRating)
+        public AddRatingGameAccount(string userName, int initialRating) : base(userName, initialRating)
         {
-            TypeOfGameAccount = "With additional points for winning streaks";
+            TypeOfGameAccount = Type.WithAdditionalRating;
         }
 
         private int TotalBonusPoints

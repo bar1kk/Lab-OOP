@@ -2,11 +2,11 @@
 
 namespace Lab_2.GameAccount
 {
-    public class HalfPointsGameAccount:BaseGameAccount
+    public class HalfRatingGameAccount:BaseGameAccount
     {
-        public HalfPointsGameAccount(string userName, int initialRating) : base(userName, initialRating)
+        public HalfRatingGameAccount(string userName, int initialRating) : base(userName, initialRating)
         {
-            TypeOfGameAccount = "From which half of the game rating is deducted";
+            TypeOfGameAccount = Type.OnlyHalfRatingIsDeducted;
         }
 
         

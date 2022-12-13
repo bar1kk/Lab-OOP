@@ -6,7 +6,7 @@ namespace Lab_2.GameAccount
     {
         public NormalGameAccount(string userName, int initialRating) : base(userName, initialRating)
         {
-            TypeOfGameAccount = "Normal";
+            TypeOfGameAccount = Type.Normal;
         }
 
         public override int CurrentRating

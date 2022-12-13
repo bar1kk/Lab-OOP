@@ -6,7 +6,7 @@ namespace Lab_2.Game
     {
         public MoreChanceGame(BaseGameAccount firstPlayer, BaseGameAccount secondPlayer, int ratingValue) : base(firstPlayer, secondPlayer, ratingValue)
         {
-            TypeOfGame = "More Chance";
+            TypeOfGame = Type.MoreChance;
         }
 
         protected override void Pick(BaseGameAccount firstPlayer, BaseGameAccount secondPlayer)

@@ -12,7 +12,7 @@ namespace Lab_2
             
             var player1 = gameAccountFactory.GetNormalGameAccount("Саша", 90);
             var player2 = gameAccountFactory.GetAddPointsGameAccount("Денис", 100);
-            var player3 = gameAccountFactory.GetHalfPointsGameAccount("Максим", 50);
+            var player3 = gameAccountFactory.GetHalfRatingGameAccount("Максим", 50);
 
             for (int i = 0; i < 12; i++)
             {

@@ -7,7 +7,7 @@ namespace Lab_2.Game
         public NormalGame(BaseGameAccount firstPlayer, BaseGameAccount secondPlayer, int ratingValue) : base(
             firstPlayer, secondPlayer, ratingValue)
         {
-            TypeOfGame = "Normal   ";
+            TypeOfGame = Type.NormalGame;
         }
     }
 }

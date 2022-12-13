@@ -8,7 +8,7 @@ namespace Lab_2.Game
         public PracticeGame(BaseGameAccount firstPlayer, BaseGameAccount secondPlayer) : base(
             firstPlayer, secondPlayer, 0)
         {
-            TypeOfGame = "Practice";
+            TypeOfGame = Type.Practice;
         }
 
         protected override void CheckRating(int ratingValue)
